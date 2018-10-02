@@ -15,9 +15,9 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "HomeSubVC")
+        let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "CameraVC")
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "TranslateVC")
-        let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "CameraVC")
+        let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "HomeSubVC")
         let vc4 = self.storyboard?.instantiateViewController(withIdentifier: "FavoriteVC")
         listControllerView.append(vc1!)
         listControllerView.append(vc2!)
@@ -51,7 +51,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageView
     }
     
     func goHomeSubView() {
-        setViewControllers([listControllerView[0]], direction: .forward, animated: false, completion: nil)
+        setViewControllers([listControllerView[2]], direction: .forward, animated: false, completion: nil)
     }
     
     func goTranslateSubView() {
@@ -59,7 +59,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageView
     }
     
     func goCameraSubView() {
-        setViewControllers([listControllerView[2]], direction: .forward, animated: false, completion: nil)
+        setViewControllers([listControllerView[0]], direction: .forward, animated: false, completion: nil)
     }
     
     func goFavoriteSubView() {

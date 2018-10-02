@@ -42,6 +42,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         initUI()
         pageView = self.childViewControllers[0] as? HomePageVC;
+         initTabbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,10 +51,6 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         AppUtility.lockOrientation(.portrait)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        initTabbar()
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -103,7 +100,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         asistantView.clipsToBounds = true
         asistantView.layer.borderWidth = 1
         asistantView.layer.borderColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
-        homeActive(homeBtn)
+        cameraActive(cameraBtn)
         
         createAssistant()
     }
@@ -168,6 +165,11 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
             self.didFocusTranslateTextField(isFocus: false)
+        
+        //translate word
+        TranslatorDevice.gotoDictionaryScreen(input: textField.text ?? "", inView: self)
+        textField.text = ""
+        
         return false
     }
     
@@ -202,7 +204,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
             subview.removeFromSuperview()
         }
         
-        var animationRecordingView = LOTAnimationView(name: "search")
+        let animationRecordingView = LOTAnimationView(name: "search")
         animationRecordingView.frame.size = CGSize(width: 200 , height: 200)
         animationRecordingView.contentMode = .scaleAspectFill
         animationRecordingView.center = viewRecording.center

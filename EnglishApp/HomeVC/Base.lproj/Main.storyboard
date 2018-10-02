@@ -27,11 +27,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RYC-uV-bHN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqu-ZA-Put">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sW7-yo-G3O">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
-                                                <state key="normal" image="ic_home"/>
+                                                <state key="normal" image="ic_camera"/>
                                                 <connections>
-                                                    <action selector="homeActive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4J-gn-PSq"/>
+                                                    <action selector="cameraActive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sj-1V-F3b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-nD-X07">
@@ -44,11 +44,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-lw-mcG">
                                                 <rect key="frame" x="150" y="0.0" width="75" height="50"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sW7-yo-G3O">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqu-ZA-Put">
                                                 <rect key="frame" x="225" y="0.0" width="75" height="50"/>
-                                                <state key="normal" image="ic_camera"/>
+                                                <state key="normal" image="ic_home"/>
                                                 <connections>
-                                                    <action selector="cameraActive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sj-1V-F3b"/>
+                                                    <action selector="homeActive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4J-gn-PSq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxK-Ci-boM">
@@ -105,17 +105,17 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8EE-nv-gLd" userLabel="txtTranslate">
-                                                <rect key="frame" x="55" y="0.0" width="190" height="30"/>
+                                                <rect key="frame" x="55" y="0.0" width="170" height="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="o5V-T5-6d5"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-n1-dS8">
-                                                <rect key="frame" x="250" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="230" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="MmM-jt-q5N"/>
                                                     <constraint firstAttribute="height" constant="30" id="Yze-Q9-hls"/>
@@ -126,18 +126,18 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zM-MI-PIr">
-                                                <rect key="frame" x="285" y="0.0" width="20" height="30"/>
+                                                <rect key="frame" x="265" y="0.0" width="20" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="BGs-xw-e45"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfl-w6-MU4">
-                                                <rect key="frame" x="310" y="0.0" width="45" height="30"/>
+                                                <rect key="frame" x="290" y="0.0" width="65" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="uN0-fG-ubC"/>
+                                                    <constraint firstAttribute="width" constant="65" id="uN0-fG-ubC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
-                                                <state key="normal" title="Huỷ"/>
+                                                <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="cancelTranslateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3w-P8-Tld"/>
                                                 </connections>
@@ -225,7 +225,8 @@
                         <outlet property="btnDictionary" destination="IYh-ca-U3M" id="dE5-Ox-hQS"/>
                         <outlet property="btnSpeech" destination="ElL-KO-VRg" id="cjS-bA-iaj"/>
                         <outlet property="previewView" destination="Beq-xa-7AA" id="IAY-5Z-ovR"/>
-                        <outlet property="viewNameOfObject" destination="4Mz-iT-0dC" id="80t-bO-UnT"/>
+                        <outlet property="txtNameObject" destination="4Mz-iT-0dC" id="Gku-cc-Wun"/>
+                        <outlet property="viewNameOfObject" destination="sAw-e6-ZJ9" id="feA-Pv-Kls"/>
                         <outlet property="viewShowObjectInfo" destination="7b3-UA-DJP" id="1Sb-Fq-viM"/>
                     </connections>
                 </viewController>
@@ -234,8 +235,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="305" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-e6-ZJ9">
-                            <rect key="frame" x="5" y="13" width="295" height="34"/>
+                        <view alpha="0.45000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-e6-ZJ9">
+                            <rect key="frame" x="5" y="7" width="295" height="46"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -244,21 +245,29 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mobie Phone" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Mz-iT-0dC">
-                                    <rect key="frame" x="13" y="17" width="208" height="26"/>
+                                    <rect key="frame" x="13" y="17" width="181" height="26"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="19"/>
+                                    <color key="textColor" red="0.0" green="0.0022585618207556948" blue="0.0023016526994923403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElL-KO-VRg">
-                                    <rect key="frame" x="262" y="15" width="30" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYh-ca-U3M">
-                                    <rect key="frame" x="224" y="15" width="30" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYh-ca-U3M">
+                                    <rect key="frame" x="202" y="10" width="40" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="ic_search"/>
+                                    <connections>
+                                        <action selector="goDictionaryScreen:" destination="cay-B3-7QP" eventType="touchUpInside" id="yEJ-Wl-cCP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElL-KO-VRg">
+                                    <rect key="frame" x="250" y="10" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="ic_voice"/>
+                                    <connections>
+                                        <action selector="speechWord:" destination="cay-B3-7QP" eventType="touchUpInside" id="eOT-p4-lPf"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </view>
@@ -329,5 +338,6 @@
         <image name="ic_microphone" width="30" height="30"/>
         <image name="ic_search" width="30" height="30"/>
         <image name="ic_translate" width="30" height="30"/>
+        <image name="ic_voice" width="30" height="30"/>
     </resources>
 </document>

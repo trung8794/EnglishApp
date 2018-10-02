@@ -14,14 +14,19 @@ class VisionObjectRecognitionViewController: HomeSubVC {
     
     // MARK: - Outlets
     @IBOutlet var viewShowObjectInfo: UIView!
-    @IBOutlet weak var viewNameOfObject: UILabel!
+    @IBOutlet weak var txtNameObject: UILabel!
+    @IBOutlet weak var viewNameOfObject: UIView!
     @IBOutlet weak var btnDictionary: UIButton!
     @IBOutlet weak var btnSpeech: UIButton!
+    
+    
     
     // MARK: - Vars
     var detectionOverlay: CALayer! = nil
     var objectIdentify: String! = nil
     var infoView: UIView! = nil
+    
+    var textOutput = ""
     // Vision parts
     private var requests = [VNRequest]()
     
@@ -60,25 +65,33 @@ class VisionObjectRecognitionViewController: HomeSubVC {
             // Select only the label with the highest confidence.
             guard let topLabelObservation = results.first as? VNClassificationObservation else { return }
             let objectName = topLabelObservation.identifier
-            if objectName != objectIdentify && topLabelObservation.confidence >= 0.5 {
-                if (infoView != nil) {
-                    infoView.layer.removeFromSuperlayer()
+            if objectName != objectIdentify && topLabelObservation.confidence >= 0.3 {
+                if (viewShowObjectInfo != nil) {
+                    viewShowObjectInfo.removeFromSuperview()
                 }
                 
                 print("\(topLabelObservation.identifier) - \(topLabelObservation.confidence)")
                 objectIdentify = objectName
                 
-                viewShowObjectInfo.frame = CGRect(x: 10, y: 100, width: rootLayer.frame.width - 20, height: 60)
-                viewShowObjectInfo.clipsToBounds = true
-                viewShowObjectInfo.layer.cornerRadius = 10
-                viewNameOfObject.text = topLabelObservation.identifier
+                var fullObjectArr = topLabelObservation.identifier.components(separatedBy: ",")
+                let firstObj: String = fullObjectArr[0].trimmingCharacters(in: .whitespacesAndNewlines)
+                txtNameObject.text = firstObj
+                textOutput = firstObj
                 
-                rootLayer.addSublayer(viewShowObjectInfo.layer)
+                self.view.addSubview(viewShowObjectInfo)
             }
             
         }
         self.updateLayerGeometry()
         CATransaction.commit()
+    }
+    
+    func setupObjectInfomationView() {
+        viewShowObjectInfo.frame = CGRect(x: 10, y: 100, width: rootLayer.frame.width - 20, height: 60)
+        viewShowObjectInfo.layer.cornerRadius = 10
+        viewShowObjectInfo.clipsToBounds = true
+        btnDictionary.layer.cornerRadius = 10
+        btnSpeech.layer.cornerRadius = 10
     }
     
     override func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -103,9 +116,7 @@ class VisionObjectRecognitionViewController: HomeSubVC {
         setupLayers()
         updateLayerGeometry()
         setupVision()
-        
-        // start the capture
-        startCaptureSession()
+        setupObjectInfomationView()
     }
     
     func setupLayers() {
@@ -140,5 +151,14 @@ class VisionObjectRecognitionViewController: HomeSubVC {
         
         CATransaction.commit()
         
-    }   
+    }
+    
+    // MARK: - Actions Button
+    @IBAction func goDictionaryScreen(_ sender: UIButton) {
+        TranslatorDevice.gotoDictionaryScreen(input: textOutput, inView: self)
+    }
+    @IBAction func speechWord(_ sender: UIButton) {
+        TranslatorDevice.speakeEnglish(input: textOutput)
+    }
+    
 }
