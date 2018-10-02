@@ -19,6 +19,8 @@
 		109389A5215FC7CE00819D24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109389A4215FC7CE00819D24 /* Constants.swift */; };
 		109389A7215FC9EB00819D24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109389A6215FC9EB00819D24 /* Extensions.swift */; };
 		109389AB215FD7EE00819D24 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109389AA215FD7EE00819D24 /* HomePageVC.swift */; };
+		10A11FF821631A02000788AF /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A11FF721631A02000788AF /* VisionObjectRecognitionViewController.swift */; };
+		10A11FFA21631B20000788AF /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10A11FF921631B20000788AF /* Resnet50.mlmodel */; };
 		10BDD7572160BD9800DAA6BD /* HomeSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD7562160BD9800DAA6BD /* HomeSubVC.swift */; };
 		10BDD7592160BDAA00DAA6BD /* TranslateSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD7582160BDAA00DAA6BD /* TranslateSubVC.swift */; };
 		10BDD75B2160BDBA00DAA6BD /* CameraSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BDD75A2160BDBA00DAA6BD /* CameraSubVC.swift */; };
@@ -75,6 +77,8 @@
 		109389A4215FC7CE00819D24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		109389A6215FC9EB00819D24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		109389AA215FD7EE00819D24 /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
+		10A11FF721631A02000788AF /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
+		10A11FF921631B20000788AF /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		10BDD7562160BD9800DAA6BD /* HomeSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubVC.swift; sourceTree = "<group>"; };
 		10BDD7582160BDAA00DAA6BD /* TranslateSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSubVC.swift; sourceTree = "<group>"; };
 		10BDD75A2160BDBA00DAA6BD /* CameraSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSubVC.swift; sourceTree = "<group>"; };
@@ -212,7 +216,8 @@
 		10224E2E215F294E002D4A28 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				10224E33215F29FC002D4A28 /* Elements */,
+				10A11FFB216321DC000788AF /* HomeSubVC */,
+				10224E33215F29FC002D4A28 /* ViewControllerElements */,
 				10224E00215F2855002D4A28 /* Main.storyboard */,
 				10224E2F215F29AF002D4A28 /* HomeVC.swift */,
 				10224E31215F29EA002D4A28 /* HomeAssets.xcassets */,
@@ -221,15 +226,24 @@
 			path = HomeVC;
 			sourceTree = "<group>";
 		};
-		10224E33215F29FC002D4A28 /* Elements */ = {
+		10224E33215F29FC002D4A28 /* ViewControllerElements */ = {
 			isa = PBXGroup;
 			children = (
-				10BDD7562160BD9800DAA6BD /* HomeSubVC.swift */,
 				10BDD7582160BDAA00DAA6BD /* TranslateSubVC.swift */,
 				10BDD75A2160BDBA00DAA6BD /* CameraSubVC.swift */,
 				10BDD75C2160BDC900DAA6BD /* FavoriteSubVC.swift */,
 			);
-			path = Elements;
+			path = ViewControllerElements;
+			sourceTree = "<group>";
+		};
+		10A11FFB216321DC000788AF /* HomeSubVC */ = {
+			isa = PBXGroup;
+			children = (
+				10A11FF921631B20000788AF /* Resnet50.mlmodel */,
+				10A11FF721631A02000788AF /* VisionObjectRecognitionViewController.swift */,
+				10BDD7562160BD9800DAA6BD /* HomeSubVC.swift */,
+			);
+			path = HomeSubVC;
 			sourceTree = "<group>";
 		};
 		10D40D4E2160647100583983 /* Lotties */ = {
@@ -511,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A11FF821631A02000788AF /* VisionObjectRecognitionViewController.swift in Sources */,
 				10BDD7592160BDAA00DAA6BD /* TranslateSubVC.swift in Sources */,
 				109389AB215FD7EE00819D24 /* HomePageVC.swift in Sources */,
 				10BDD75B2160BDBA00DAA6BD /* CameraSubVC.swift in Sources */,
@@ -520,6 +535,7 @@
 				10224E30215F29AF002D4A28 /* HomeVC.swift in Sources */,
 				109389A5215FC7CE00819D24 /* Constants.swift in Sources */,
 				109389A7215FC9EB00819D24 /* Extensions.swift in Sources */,
+				10A11FFA21631B20000788AF /* Resnet50.mlmodel in Sources */,
 				10BDD75D2160BDC900DAA6BD /* FavoriteSubVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

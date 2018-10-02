@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +13,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k2P-nX-y1q"/>
+                        <viewControllerLayoutGuide type="bottom" id="w6X-zm-gqT"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,23 +158,22 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="54c-cU-k9R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1dw-F5-xdj"/>
-                            <constraint firstItem="LQi-72-Lv7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5Fo-4A-aAj"/>
+                            <constraint firstItem="54c-cU-k9R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1dw-F5-xdj"/>
+                            <constraint firstItem="LQi-72-Lv7" firstAttribute="bottom" secondItem="w6X-zm-gqT" secondAttribute="top" id="5Fo-4A-aAj"/>
                             <constraint firstAttribute="bottom" secondItem="PFa-6N-vzw" secondAttribute="bottom" id="8Ty-Ik-tgx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="54c-cU-k9R" secondAttribute="trailing" id="BBL-5L-Ouk"/>
-                            <constraint firstItem="LQi-72-Lv7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FNt-r4-rKS"/>
+                            <constraint firstAttribute="trailing" secondItem="54c-cU-k9R" secondAttribute="trailing" id="BBL-5L-Ouk"/>
+                            <constraint firstItem="LQi-72-Lv7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FNt-r4-rKS"/>
                             <constraint firstItem="LQi-72-Lv7" firstAttribute="top" secondItem="54c-cU-k9R" secondAttribute="bottom" id="HTm-5Z-Aqs"/>
-                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J35-D6-K9C"/>
-                            <constraint firstItem="b57-fY-Mqp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Man-kT-MQo"/>
-                            <constraint firstItem="b57-fY-Mqp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OoL-BA-zzE"/>
-                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Os5-e7-b97"/>
-                            <constraint firstItem="PFa-6N-vzw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yuj-Du-J8M"/>
-                            <constraint firstItem="LQi-72-Lv7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hgS-Cz-tci"/>
+                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J35-D6-K9C"/>
+                            <constraint firstItem="b57-fY-Mqp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Man-kT-MQo"/>
+                            <constraint firstItem="b57-fY-Mqp" firstAttribute="top" secondItem="k2P-nX-y1q" secondAttribute="bottom" constant="10" id="OoL-BA-zzE"/>
+                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Os5-e7-b97"/>
+                            <constraint firstItem="PFa-6N-vzw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yuj-Du-J8M"/>
+                            <constraint firstItem="LQi-72-Lv7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="hgS-Cz-tci"/>
                             <constraint firstItem="54c-cU-k9R" firstAttribute="top" secondItem="WIJ-1d-2BQ" secondAttribute="bottom" id="kV0-H9-Ksk"/>
-                            <constraint firstItem="b57-fY-Mqp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="txo-6q-xwS"/>
-                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uCO-0q-PB8"/>
+                            <constraint firstItem="b57-fY-Mqp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-10" id="txo-6q-xwS"/>
+                            <constraint firstItem="WIJ-1d-2BQ" firstAttribute="top" secondItem="k2P-nX-y1q" secondAttribute="bottom" id="uCO-0q-PB8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="asistantView" destination="PFa-6N-vzw" id="8oE-IP-9Vg"/>
@@ -194,7 +196,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="S3G-35-R0k"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="118" y="150"/>
@@ -207,18 +208,62 @@
             </objects>
             <point key="canvasLocation" x="772" y="118"/>
         </scene>
-        <!--Home SubVC-->
+        <!--Vision Object Recognition View Controller-->
         <scene sceneID="5Hn-bx-cob">
             <objects>
-                <viewController storyboardIdentifier="HomeSubVC" id="cay-B3-7QP" customClass="HomeSubVC" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeSubVC" id="cay-B3-7QP" customClass="VisionObjectRecognitionViewController" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qKK-fF-qLu"/>
+                        <viewControllerLayoutGuide type="bottom" id="8VB-Ce-PbJ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Beq-xa-7AA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gi4-rJ-lEt"/>
                     </view>
+                    <connections>
+                        <outlet property="btnDictionary" destination="IYh-ca-U3M" id="dE5-Ox-hQS"/>
+                        <outlet property="btnSpeech" destination="ElL-KO-VRg" id="cjS-bA-iaj"/>
+                        <outlet property="previewView" destination="Beq-xa-7AA" id="IAY-5Z-ovR"/>
+                        <outlet property="viewNameOfObject" destination="4Mz-iT-0dC" id="80t-bO-UnT"/>
+                        <outlet property="viewShowObjectInfo" destination="7b3-UA-DJP" id="1Sb-Fq-viM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7My-qR-mdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="7b3-UA-DJP">
+                    <rect key="frame" x="0.0" y="0.0" width="305" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-e6-ZJ9">
+                            <rect key="frame" x="5" y="13" width="295" height="34"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSR-or-cZT">
+                            <rect key="frame" x="0.0" y="0.0" width="305" height="60"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mobie Phone" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Mz-iT-0dC">
+                                    <rect key="frame" x="13" y="17" width="208" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElL-KO-VRg">
+                                    <rect key="frame" x="262" y="15" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYh-ca-U3M">
+                                    <rect key="frame" x="224" y="15" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                            </subviews>
+                        </view>
+                    </subviews>
+                </view>
             </objects>
             <point key="canvasLocation" x="1401" y="150"/>
         </scene>
@@ -226,11 +271,14 @@
         <scene sceneID="eKS-9a-6cY">
             <objects>
                 <viewController storyboardIdentifier="TranslateVC" id="2cG-AB-RlJ" customClass="TranslateSubVC" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HbS-Wv-NYF"/>
+                        <viewControllerLayoutGuide type="bottom" id="PaO-Qt-oK7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kzM-my-Kqp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="5VJ-t5-Kh2"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dia-kC-L8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,11 +289,14 @@
         <scene sceneID="hrD-2g-UlG">
             <objects>
                 <viewController storyboardIdentifier="FavoriteVC" id="Hvy-eH-RBh" customClass="FavoriteSubVC" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ay8-qL-T5P"/>
+                        <viewControllerLayoutGuide type="bottom" id="akJ-OI-JiU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hFh-gw-aiG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="2jx-mO-nNK"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUX-Ho-FNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,11 +307,14 @@
         <scene sceneID="5QV-Te-wgg">
             <objects>
                 <viewController storyboardIdentifier="CameraVC" id="sT9-yU-69M" customClass="CameraSubVC" customModule="EnglishApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnH-0n-uOK"/>
+                        <viewControllerLayoutGuide type="bottom" id="ws8-gr-Uln"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fQJ-Cc-3gO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Vkl-cN-wp1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fz-lP-js8" userLabel="First Responder" sceneMemberID="firstResponder"/>
