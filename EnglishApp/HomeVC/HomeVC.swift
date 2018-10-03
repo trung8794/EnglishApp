@@ -75,6 +75,8 @@ class HomeVC: UIViewController, UITextFieldDelegate, SFSpeechRecognizerDelegate 
     
     func initUI() {
         initTranslateView()
+        btnHuyTranslate.addEffect()
+        btnRecordTranslate.addEffect()
     }
 
     // MARK: - Tabar

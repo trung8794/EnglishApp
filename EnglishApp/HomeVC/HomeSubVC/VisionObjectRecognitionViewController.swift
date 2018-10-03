@@ -110,6 +110,7 @@ class VisionObjectRecognitionViewController: HomeSubVC {
     }
     
     override func setupAVCapture() {
+        setupViews()
         super.setupAVCapture()
         
         // setup Vision parts
@@ -118,7 +119,14 @@ class VisionObjectRecognitionViewController: HomeSubVC {
         setupVision()
         setupObjectInfomationView()
     }
-    
+    func setupViews() {
+        btnSpeech.addEffect()
+        btnDictionary.addEffect()
+        btnSpeech.layer.cornerRadius = 5
+        btnSpeech.clipsToBounds = true
+        btnDictionary.layer.cornerRadius = 5
+        btnDictionary.clipsToBounds = true
+    }
     func setupLayers() {
         detectionOverlay = CALayer() // container layer that has all the renderings of the observations
         detectionOverlay.name = "DetectionOverlay"

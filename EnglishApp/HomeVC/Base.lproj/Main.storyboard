@@ -323,12 +323,54 @@
                     <view key="view" contentMode="scaleToFill" id="fQJ-Cc-3gO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-3Q-F18">
+                                <rect key="frame" x="50" y="587" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZOd-u6-bUd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Camera" image="ic_open_camera">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openCameraAction:" destination="sT9-yU-69M" eventType="touchUpInside" id="jcZ-nm-eBQ"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3g-A6-5Ng">
+                                <rect key="frame" x="5" y="100" width="365" height="477"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DH5-3Q-F18" firstAttribute="centerX" secondItem="fQJ-Cc-3gO" secondAttribute="centerX" id="0Kb-P6-6b8"/>
+                            <constraint firstItem="ws8-gr-Uln" firstAttribute="top" secondItem="DH5-3Q-F18" secondAttribute="bottom" constant="40" id="AHd-WE-OcD"/>
+                            <constraint firstAttribute="trailing" secondItem="D3g-A6-5Ng" secondAttribute="trailing" constant="5" id="LQD-AC-NtG"/>
+                            <constraint firstItem="DH5-3Q-F18" firstAttribute="leading" secondItem="fQJ-Cc-3gO" secondAttribute="leading" constant="50" id="UO0-KY-NVM"/>
+                            <constraint firstItem="DH5-3Q-F18" firstAttribute="top" secondItem="D3g-A6-5Ng" secondAttribute="bottom" constant="10" id="VqK-NK-1wB"/>
+                            <constraint firstItem="D3g-A6-5Ng" firstAttribute="top" secondItem="bnH-0n-uOK" secondAttribute="bottom" constant="80" id="Yos-3f-s3N"/>
+                            <constraint firstItem="D3g-A6-5Ng" firstAttribute="leading" secondItem="fQJ-Cc-3gO" secondAttribute="leading" constant="5" id="xQc-SW-wOb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnOpenCamera" destination="DH5-3Q-F18" id="vdh-Ht-f3e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fz-lP-js8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="1mT-Qr-jMA">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="185"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="Lqf-IX-z6L">
+                    <rect key="frame" x="0.0" y="0.0" width="243" height="188"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="2662" y="150"/>
+            <point key="canvasLocation" x="2661.5999999999999" y="149.77511244377811"/>
         </scene>
     </scenes>
     <resources>
@@ -336,6 +378,7 @@
         <image name="ic_favorite" width="30" height="30"/>
         <image name="ic_home" width="30" height="30"/>
         <image name="ic_microphone" width="30" height="30"/>
+        <image name="ic_open_camera" width="30" height="30"/>
         <image name="ic_search" width="30" height="30"/>
         <image name="ic_translate" width="30" height="30"/>
         <image name="ic_voice" width="30" height="30"/>

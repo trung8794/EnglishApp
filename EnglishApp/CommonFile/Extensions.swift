@@ -40,7 +40,30 @@ extension UIButton{
         pulse.damping = 1.0
         layer.add(pulse, forKey: nil)
     }
+    
+    @objc func touchOnButton(sender : UITapGestureRecognizer) {
+        let myEffectView = UIView(frame: CGRect(x: sender.location(in: self).x, y: sender.location(in: self).y, width: 15, height: 15))
+        myEffectView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        myEffectView.alpha = 0.5
+        myEffectView.layer.cornerRadius = myEffectView.frame.height / 2
+        myEffectView.clipsToBounds = true
+        self.addSubview(myEffectView)
+        UIView.animate(withDuration: 0.5, animations: {
+            myEffectView.transform = CGAffineTransform.init(scaleX: 10, y: 10)
+            myEffectView.alpha = 0.1
+        }) { (isFinish) in
+            myEffectView.removeFromSuperview()
+        }
+        self.sendActions(for: .allEvents)
+    }
 
+    func addEffect() {
+        self.clipsToBounds = true
+        self.adjustsImageWhenDisabled = false
+        self.adjustsImageWhenHighlighted = false
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.touchOnButton))
+        self.addGestureRecognizer(gesture)
+    }
 }
 
 // MARK: - UIView Extension

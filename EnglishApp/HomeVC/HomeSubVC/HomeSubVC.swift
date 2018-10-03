@@ -35,6 +35,7 @@ class HomeSubVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
          setupAVCapture()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
        startCaptureSession()
