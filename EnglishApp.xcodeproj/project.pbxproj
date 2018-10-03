@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06926367A2785BC92DF8527A /* Pods_EnglishAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F030080EFF62D8D7912884 /* Pods_EnglishAppUITests.framework */; };
 		10023D8A216356D6007910A5 /* TranslatorDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10023D89216356D6007910A5 /* TranslatorDevice.swift */; };
+		10023D8C21637E21007910A5 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10023D8B21637E21007910A5 /* Inceptionv3.mlmodel */; };
 		10224DFD215F2855002D4A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10224DFC215F2855002D4A28 /* AppDelegate.swift */; };
 		10224E02215F2855002D4A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10224E00215F2855002D4A28 /* Main.storyboard */; };
 		10224E04215F2856002D4A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10224E03215F2856002D4A28 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		09EA63B630BA064E381B305F /* Pods-EnglishAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishAppTests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishAppTests/Pods-EnglishAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		10023D89216356D6007910A5 /* TranslatorDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorDevice.swift; sourceTree = "<group>"; };
+		10023D8B21637E21007910A5 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		10224DF9215F2855002D4A28 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10224DFC215F2855002D4A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10224E01215F2855002D4A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				10A11FF921631B20000788AF /* Resnet50.mlmodel */,
+				10023D8B21637E21007910A5 /* Inceptionv3.mlmodel */,
 				10A11FF721631A02000788AF /* VisionObjectRecognitionViewController.swift */,
 				10BDD7562160BD9800DAA6BD /* HomeSubVC.swift */,
 			);
@@ -541,6 +544,7 @@
 				109389A7215FC9EB00819D24 /* Extensions.swift in Sources */,
 				10A11FFA21631B20000788AF /* Resnet50.mlmodel in Sources */,
 				10BDD75D2160BDC900DAA6BD /* FavoriteSubVC.swift in Sources */,
+				10023D8C21637E21007910A5 /* Inceptionv3.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

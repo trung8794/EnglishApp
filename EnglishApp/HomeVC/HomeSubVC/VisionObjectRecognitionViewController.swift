@@ -36,7 +36,7 @@ class VisionObjectRecognitionViewController: HomeSubVC {
         let error: NSError! = nil
         
         do {
-            let visionModel = try VNCoreMLModel(for: Resnet50().model)
+            let visionModel = try VNCoreMLModel(for: Inceptionv3().model)
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     // perform all the UI updates on the main queue

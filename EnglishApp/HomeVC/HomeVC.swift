@@ -8,8 +8,9 @@
 
 import UIKit
 import Lottie
+import Speech
 
-class HomeVC: UIViewController, UITextFieldDelegate {
+class HomeVC: UIViewController, UITextFieldDelegate, SFSpeechRecognizerDelegate {
 
     // MARK: - Outlet
     // Tabbar Outlets
@@ -33,6 +34,12 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var containerView: UIView!
     // MARK: - Vars
+    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    
     var animationView : LOTAnimationView?
     
     var pageView : HomePageVC?
@@ -43,6 +50,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         initUI()
         pageView = self.childViewControllers[0] as? HomePageVC;
          initTabbar()
+        initRecording()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,6 +165,11 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     func didFocusTranslateTextField(isFocus: Bool) {
         UIView.animate(withDuration: 0.5) {
 //            self.viewSearchTranslate.isHidden = isFocus ? true : false
+            if isFocus{
+                self.txtTranslate.becomeFirstResponder()
+            }else{
+                self.txtTranslate.resignFirstResponder()
+            }
             self.btnHuyTranslate.isHidden = isFocus ? false : true
             self.viewHelperPadding2.isHidden = isFocus ? true : false
         }
@@ -178,15 +191,55 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancelTranslateAction(_ sender: UIButton) {
-        txtTranslate.resignFirstResponder()
           self.didFocusTranslateTextField(isFocus: false)
     }
     
     // MARK: - Recording View
+    
+    func initRecording()  {
+        speechRecognizer?.delegate = self  //3
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+            
+            var isButtonEnabled = false
+            
+            switch authStatus {  //5
+            case .authorized:
+                isButtonEnabled = true
+                
+            case .denied:
+                isButtonEnabled = false
+                print("User denied access to speech recognition")
+                
+            case .restricted:
+                isButtonEnabled = false
+                print("Speech recognition restricted on this device")
+                
+            case .notDetermined:
+                isButtonEnabled = false
+                print("Speech recognition not yet authorized")
+            }
+            
+            OperationQueue.main.addOperation() {
+                self.setIsRecording(isRecord: !isButtonEnabled)
+                if isButtonEnabled {
+                    self.hideRecodingView()
+                }else{
+                    self.showRecodingView()
+                }
+            }
+        }
+    }
     // recording, when show and hide recoding View.
     @IBAction func startRecordAction(_ sender: Any) {
         setIsRecording(isRecord: true)
         showRecodingView()
+        //start recording here.
+        if !audioEngine.isRunning {
+            self.txtTranslate.text = ""
+            startRecording()
+            print("Started recording...")
+        }
     }
     
     func setIsRecording(isRecord : Bool) {
@@ -220,11 +273,97 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     @objc func touchToHideRecordingView() {
         hideRecodingView()
         setIsRecording(isRecord: false)
+        
+        // stop recording here
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            //translate word
+            TranslatorDevice.gotoDictionaryScreen(input: txtTranslate.text ?? "", inView: self)
+            self.txtTranslate.text = ""
+        }
+        
     }
-    
     
     func hideRecodingView() {
         viewRecording.removeFromSuperview()
+    }
+    
+    func startRecording() {
+        
+        if recognitionTask != nil {
+            recognitionTask?.cancel()
+            recognitionTask = nil
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
+        }
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+        guard let inputNode = audioEngine.inputNode as? AVAudioInputNode else {
+            fatalError("Audio engine has no input node")
+        }
+        
+        guard let recognitionRequest = recognitionRequest else {
+            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
+        }
+        
+        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
+            
+            var isFinal = false
+            
+            if result != nil {
+                // show result
+                self.txtTranslate.text = result?.bestTranscription.formattedString
+                isFinal = (result?.isFinal)!
+            }
+            
+            if error != nil || isFinal {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+                
+                self.setIsRecording(isRecord: false)
+                self.hideRecodingView()
+            }
+        })
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        do {
+            try audioEngine.start()
+        } catch {
+            print("audioEngine couldn't start because of an error.")
+        }
+        
+        print("Say something, I'm listening!")
+        
+    }
+    
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            setIsRecording(isRecord: false)
+            hideRecodingView()
+        } else {
+            setIsRecording(isRecord: true)
+            showRecodingView()
+        }
     }
     
     // MARK: - PageView
